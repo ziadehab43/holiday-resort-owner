@@ -1,0 +1,15 @@
+name = "holiday-resort-owner-api"
+main = "src/index.js"
+compatibility_date = "2026-08-31"
+
+[vars]
+FIREBASE_PROJECT_ID = "holiday-resort-7fa3f"
+SUPABASE_URL = "https://nqiglpcczgvoemtxeuwi.supabase.co"
+
+# Configure secrets with `wrangler secret put`; never commit their values:
+# FIREBASE_CLIENT_EMAIL
+# FIREBASE_PRIVATE_KEY
+
+[[r2_buckets]]
+binding = "RELEASES"
+bucket_name = "holiday-resort-releases"

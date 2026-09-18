@@ -1,0 +1,26 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "holiday-resort-7fa3f",
+          "appId": "1:732450532931:android:cd23191b8457d78325eef6",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "holiday-resort-7fa3f",
+          "configurations": {
+            "android": "1:732450532931:android:cd23191b8457d78325eef6",
+            "ios": "1:732450532931:ios:f22defb30849be4325eef6"
+          }
+        }
+      }
+    }
+  }
+}

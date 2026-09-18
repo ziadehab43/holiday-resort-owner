@@ -1,0 +1,601 @@
+{
+  "fieldOverrides": [],
+  "indexes": [
+    {
+      "collectionGroup": "qr_codes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ownerId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "unitId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "qr_codes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ownerId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "unitId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "validDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ownerId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "unitId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "gate_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "type"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "enteredAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "ownerName"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "status"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        },
+        {
+          "order": "DESCENDING",
+          "fieldPath": "createdAt"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "units",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "buildingNumber"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "unitNumber"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "units",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ownerId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "isActive",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "role"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "name"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "role"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "isActive"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "order": "ASCENDING",
+          "fieldPath": "role"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "isActive"
+        },
+        {
+          "order": "ASCENDING",
+          "fieldPath": "name"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "fieldPath": "role",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "searchKeys",
+          "arrayConfig": "CONTAINS"
+        }
+      ],
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": [
+        {
+          "fieldPath": "role",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "isActive",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "searchKeys",
+          "arrayConfig": "CONTAINS"
+        }
+      ],
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "holiday-resort-owner-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test",
+    "check": "npm test && wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.37.1"
+  }
+}

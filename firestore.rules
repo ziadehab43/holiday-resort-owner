@@ -1,0 +1,98 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function userData() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function activeRole(role) { return signedIn() && userData().isActive == true && userData().role == role; }
+    function isOwner() { return activeRole('owner'); }
+    function isAdmin() { return activeRole('admin'); }
+    function isSecurity() {
+      return signedIn() &&
+        (('security' in request.auth.token && request.auth.token.security == true) || activeRole('security'));
+    }
+    function assignedUnit(unitId) {
+      return isOwner() &&
+        get(/databases/$(database)/documents/units/$(unitId)).data.ownerId == request.auth.uid &&
+        get(/databases/$(database)/documents/units/$(unitId)).data.isActive == true;
+    }
+    function unitData(unitId) { return get(/databases/$(database)/documents/units/$(unitId)).data; }
+    function validReportStatus(status) {
+      return status in ['pending', 'in_progress', 'under_review', 'resolved', 'rejected'];
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    match /units/{unitId} {
+      allow read: if isAdmin() || isSecurity() ||
+        (isOwner() && resource.data.ownerId == request.auth.uid && resource.data.isActive == true);
+      allow write: if isAdmin();
+    }
+
+    match /qr_codes/{qrId} {
+      allow read: if isAdmin() || isSecurity() ||
+        (isOwner() && resource.data.ownerId == request.auth.uid && assignedUnit(resource.data.unitId));
+      // QR creation, cancellation, and consumption are Worker-API-only. The
+      // Worker verifies Firebase ID tokens and unit ownership server-side.
+      allow create, update, delete: if false;
+    }
+
+    match /daily_guest_limits/{limitId} {
+      allow read: if isAdmin();
+      // Owners can never reset or inflate quota ledgers directly.
+      allow create, update, delete: if false;
+    }
+
+    match /reports/{reportId} {
+      allow read: if isAdmin() ||
+        (isOwner() && resource.data.ownerId == request.auth.uid && assignedUnit(resource.data.unitId));
+      allow create: if isOwner() &&
+        request.resource.data.ownerId == request.auth.uid &&
+        assignedUnit(request.resource.data.unitId) &&
+        request.resource.data.status == 'pending' &&
+        (!('adminReadAt' in request.resource.data) || request.resource.data.adminReadAt == null) &&
+        (!('buildingNumber' in request.resource.data) || request.resource.data.buildingNumber == unitData(request.resource.data.unitId).buildingNumber) &&
+        request.resource.data.createdAt == request.time &&
+        request.resource.data.ownerName == userData().name &&
+        request.resource.data.unitNumber == unitData(request.resource.data.unitId).unitNumber &&
+        request.resource.data.category in ['qr', 'security', 'unit_request', 'general', 'other'] &&
+        request.resource.data.updatedAt == null &&
+        request.resource.data.adminReply == null &&
+        request.resource.data.adminResponse == null &&
+        request.resource.data.message is string &&
+        request.resource.data.message.size() > 0 &&
+        request.resource.data.message.size() <= 4000 &&
+        request.resource.data.description == request.resource.data.message &&
+        request.resource.data.keys().hasAll([
+          'ownerId', 'ownerName', 'unitId', 'unitNumber', 'category',
+          'message', 'description', 'status', 'createdAt', 'updatedAt',
+          'adminReply', 'adminResponse'
+        ]) &&
+        request.resource.data.keys().hasOnly([
+          'ownerId', 'ownerName', 'unitId', 'unitNumber', 'category',
+          'message', 'description', 'status', 'createdAt', 'updatedAt',
+          'adminReply', 'adminResponse', 'adminReadAt', 'buildingNumber'
+        ]);
+      allow update: if isAdmin() &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['status', 'adminReply', 'adminResponse', 'updatedAt']) &&
+        validReportStatus(request.resource.data.status) &&
+        request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
+    }
+
+    match /gate_entries/{entryId} {
+      allow read: if isAdmin() || isSecurity() ||
+        (isOwner() && resource.data.ownerId == request.auth.uid && assignedUnit(resource.data.unitId));
+      allow create, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+

@@ -1,0 +1,25 @@
+{
+  "name": "holiday-resort-functions",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node --test index.test.js",
+    "test:rules": "firebase emulators:exec --only firestore --project holiday-resort-7fa3f \"node --test firestore.rules.emulator.js\"",
+    "check": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.3.0",
+    "firebase-functions": "^7.3.2",
+    "luxon": "^3.7.1"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^5.0.2",
+    "eslint": "^9.34.0",
+    "firebase": "^12.18.0",
+    "firebase-tools": "^15.28.2"
+  }
+}
