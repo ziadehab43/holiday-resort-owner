@@ -10,7 +10,7 @@ workflows:
 
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.layerly.layerly
+        bundle_identifier: com.example.testApp
 
     scripts:
       - name: Get Flutter packages
